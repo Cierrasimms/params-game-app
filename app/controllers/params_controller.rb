@@ -11,7 +11,7 @@ class ParamsController < ApplicationController
     
   def number_game
     user_number_choice = params["user_number"].to_i
-    winning_number = 36
+    winning_number = 75
     if user_number_choice < winning_number
       output_message = "You guessed too low, guess higher!"
     elsif user_number_choice > winning_number
@@ -21,6 +21,10 @@ class ParamsController < ApplicationController
     end
     render json: {message_to_user: output_message}
   end
-
+  def game
+    glob = params["other"]
+    segment = params["title"]
+    render json: {url_glob: "#{glob}", url_segment: "#{segment}"}
+end
 end
 

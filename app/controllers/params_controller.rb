@@ -27,5 +27,15 @@ class ParamsController < ApplicationController
     segment = params["title"]
     render json: {url_glob: "#{glob}", url_segment: "#{segment}"}
   end
+
+  def example
+    user_name = params["username"]
+    user_password = params["password"]
+    if user_name == "hugh" && user_password == "swordfish"
+     render json: "Valid credentials!"
+    else
+      render json: "Invalid credentials!"
+    end
+  end
 end
 

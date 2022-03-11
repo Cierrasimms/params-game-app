@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get "/number/*new_variable/:user_number" => "params#number_game"
 
   get "game/*other/:title" => "params#game"
+
+  post "/body_example" => "params#example"
 end
